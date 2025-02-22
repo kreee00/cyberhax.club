@@ -174,14 +174,12 @@ const images = [
     let i;
     const slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
     for (i = 0; i < slides.length; i++) {
-      (slides[i] as HTMLElement).style.display = "none";
+      slides[i].style.display = "none";
     }
-    (slides[slideIndex-1] as HTMLElement).style.display = "block";
-    for (let i = 0; i < slides.length; i++) {
-      (slides[i] as HTMLElement).style.display = "none";
-    }
-    (slides[slideIndex-1] as HTMLElement).style.display = "block";
-    setTimeout(showSlides, 5000); // Change image every 3 seconds
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
   }
 </script>
 
