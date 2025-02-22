@@ -1,11 +1,10 @@
 ---
-import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
+import { SITE } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
 import ArrowCard from "@components/ArrowCard"
 import PersonCard from "@components/PersonCard.astro"
-import { SITE, SOCIALS } from "@consts"
 
 const person = [
   {

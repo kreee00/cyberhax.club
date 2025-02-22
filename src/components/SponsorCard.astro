@@ -16,7 +16,7 @@ function navigateToWebsite() {
 }
 ---
 
-<div class={`card tier-${tier}`} onClick={navigateToWebsite}>
+<div class={`card tier-${tier}`} onclick={navigateToWebsite}>
   <div class="card-inner">
     {logo ? (
       <img src={logo} alt={name} class="sponsor-logo" />
@@ -25,7 +25,7 @@ function navigateToWebsite() {
     )}
     <p>{description}</p>
     {website && (
-      <a href={website} target="_blank" class="website-icon" onClick={(e) => e.stopPropagation()}>
+      <a href={website} target="_blank" class="website-icon" onclick={(e: MouseEvent) => e.stopPropagation()}>
         <svg class="globe-icon" role="img" aria-label="Website">
           <use href="/social.svg#globe" />
         </svg>
