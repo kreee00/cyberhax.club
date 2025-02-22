@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content"
 import PageLayout from "@layouts/PageLayout.astro"
 import ArrowCard from "@components/ArrowCard"
-import PersonCard from "@components/PersonCard.astro"
 import { SITE, SOCIALS } from "@consts"
 import RotatingHero from "@components/RotatingHero.astro"
 
@@ -43,7 +42,7 @@ const images = [
       <!-- Image Slideshow Section -->
       <section class="animate">
         <div class="slideshow-container aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-          {images.map((image, index) => (
+          {images.map((image, _) => (
             <div class="mySlides fade" style="display: {index === 0 ? 'block' : 'none'};">
               <img src={image} class="w-full h-full rounded-lg object-cover" />
             </div>
@@ -175,13 +174,13 @@ const images = [
     let i;
     const slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
     for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+      (slides[i] as HTMLElement).style.display = "none";
     }
-    slides[slideIndex-1].style.display = "block";
+    (slides[slideIndex-1] as HTMLElement).style.display = "block";
     for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+      (slides[i] as HTMLElement).style.display = "none";
     }
-    slides[slideIndex-1].style.display = "block";
+    (slides[slideIndex-1] as HTMLElement).style.display = "block";
     setTimeout(showSlides, 5000); // Change image every 3 seconds
   }
 </script>
