@@ -19,8 +19,8 @@ const { name, role, avatarUrl, socials } = Astro.props
 
 <div class="w-full max-w-sm p-4 rounded border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-100 hover:dark:bg-neutral-800 blend">
   <div class="flex flex-col items-center">
-    <img src={avatarUrl} alt={name} class="w-20 h-20 rounded-full mb-3">
-    <h2 class="text-red-600 text-sm">{role}</h2>
+    <img src={avatarUrl} alt={name} class="w-40 h-40 rounded-full object-cover object-center mb-3">
+    <h2 class="text-center text-red-600 text-sm">{role}</h2>
     <h3 class="text-lg font-bold text-white text-center">{name}</h3>
     <div class="flex items-center gap-3 mt-2 text-white">
       {socials && Object.entries(socials).map(([platform, url]) => (
