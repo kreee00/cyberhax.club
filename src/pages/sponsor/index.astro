@@ -1,0 +1,140 @@
+---
+// filepath: /media/kree/Xtra/Documents/website/src/pages/sponsor/index.astro
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import SponsorCard from "@components/SponsorCard.astro";
+import { SITE } from "@consts";
+
+const sponsorsData = [
+  {
+    name: "RE:HACK",
+    logo: "https://www.rehack.xyz/home/assets/img/logo.png",
+    website: "https://www.rehack.xyz/home/",
+    tier: "platinum"
+  },
+  {
+    name: "Tech Solutions",
+    logo: "/sponsors/tech-solutions.png",
+    website: "https://techsolutions.example",
+    tier: "gold"
+  },
+  {
+    name: "Security Plus",
+    logo: "/sponsors/security-plus.png",
+    website: "https://securityplus.example",
+    tier: "silver"
+  }
+];
+
+const groupedSponsors = {
+  platinum: sponsorsData.filter(sponsor => sponsor.tier === "platinum"),
+  gold: sponsorsData.filter(sponsor => sponsor.tier === "gold"),
+  silver: sponsorsData.filter(sponsor => sponsor.tier === "silver"),
+  bronze: sponsorsData.filter(sponsor => sponsor.tier === "bronze")
+};
+---
+
+<PageLayout title={"Sponsors"} description={SITE.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {"Sponsors"}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate flex items-center justify-center">
+      <div class="sponsors-grid">
+        {groupedSponsors.platinum.length > 0 && (
+          <>
+            <h2 class="tier-heading">Platinum Sponsors</h2>
+            {groupedSponsors.platinum.map((sponsor) => (
+              <SponsorCard 
+                name={sponsor.name} 
+                logo={sponsor.logo} 
+                website={sponsor.website} 
+                tier={sponsor.tier} 
+              />
+            ))}
+          </>
+        )}
+        {groupedSponsors.gold.length > 0 && (
+          <>
+            <h2 class="tier-heading">Gold Sponsors</h2>
+            {groupedSponsors.gold.map((sponsor) => (
+              <SponsorCard 
+                name={sponsor.name} 
+                logo={sponsor.logo} 
+                website={sponsor.website} 
+                tier={sponsor.tier} 
+              />
+            ))}
+          </>
+        )}
+        {groupedSponsors.silver.length > 0 && (
+          <>
+            <h2 class="tier-heading">Silver Sponsors</h2>
+            {groupedSponsors.silver.map((sponsor) => (
+              <SponsorCard 
+                name={sponsor.name} 
+                logo={sponsor.logo} 
+                website={sponsor.website} 
+                tier={sponsor.tier} 
+              />
+            ))}
+          </>
+        )}
+        {groupedSponsors.bronze.length > 0 && (
+          <>
+            <h2 class="tier-heading">Bronze Sponsors</h2>
+            {groupedSponsors.bronze.map((sponsor) => (
+              <SponsorCard 
+                name={sponsor.name} 
+                logo={sponsor.logo} 
+                website={sponsor.website} 
+                tier={sponsor.tier} 
+              />
+            ))}
+          </>
+        )}
+      </div>
+    </div>
+    
+    <!-- Become a Sponsor CTA -->
+    <div class="animate mt-16 text-center">
+      <h2 class="text-2xl font-bold mb-4 dark:text-white">Become a Sponsor</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">
+        Join us in shaping the future of cybersecurity education.
+      </p>
+      <a 
+        href={`mailto:treasurer@cyberhax.club?subject=Sponsorship Inquiry`}
+        class="inline-block bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+      >
+        Contact Us About Sponsorship
+      </a>
+    </div>
+  </BottomLayout>
+</PageLayout>
+
+<style>
+.page-heading {
+  @apply text-3xl font-bold text-center mb-8 dark:text-white;
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.tier-heading {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--tier-heading-color);
+}
+</style>

@@ -7,12 +7,6 @@ export const SITE: Site = {
   AUTHOR: "Akram Faisal",
 }
 
-// Work Page
-export const WORK: Page = {
-  TITLE: "Work",
-  DESCRIPTION: "Places I have worked.",
-}
-
 // Blog Page
 export const BLOG: Page = {
   TITLE: "Blog",
@@ -34,12 +28,8 @@ export const SEARCH: Page = {
 // Links
 export const LINKS: Links = [
   { 
-    TEXT: "Home", 
-    HREF: "/", 
-  },
-  { 
-    TEXT: "Work", 
-    HREF: "/work", 
+    TEXT: "About", 
+    HREF: "/about-us", 
   },
   { 
     TEXT: "Blog", 
@@ -48,6 +38,10 @@ export const LINKS: Links = [
   { 
     TEXT: "Projects", 
     HREF: "/projects", 
+  },
+  { 
+    TEXT: "Sponsors", 
+    HREF: "/sponsor", 
   },
 ]
 

@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import ArrowCard from "@components/ArrowCard"
+import PersonCard from "@components/PersonCard.astro"
+import { SITE, SOCIALS } from "@consts"
+
+const person = [
+  {
+    name: "Muhammad Amiruddin",
+    username: "",
+    role: "Treasurer",
+    bio: "I'm a software engineer with a passion for building and breaking things.",
+    avatarUrl: "https://i.ibb.co/RT1mLfvC/Muhammad-Amiruddin-Hakim.jpg",
+    socials: {
+      github: "https://github.com/muhammadamiruddin",
+      twitter: "https://twitter.com/muhammadamiruddin",
+      linkedin: "https://linkedin.com/in/muhammadamiruddin"
+    }
+  },
+  {
+    name: "Jane Doe",
+    username: "janedoe",
+    role: "Cybersecurity Analyst",
+    bio: "I'm a cybersecurity analyst with a passion for securing digital assets.",
+    avatarUrl: "https://avatars.githubusercontent.com/u/2",
+    socials: {
+      github: "https://github.com/janedoe",
+      twitter: "https://twitter.com/janedoe",
+      linkedin: "https://linkedin.com/in/janedoe"
+    }
+  },
+  {
+    name: "Alice Doe",
+    username: "alicedoe",
+    role: "Web Developer",
+    bio: "I'm a web developer with a passion for creating engaging user experiences.",
+    avatarUrl: "https://avatars.githubusercontent.com/u/3",
+    socials: {
+      github: "https://github.com/alicedoe",
+      twitter: "https://twitter.com/alicedoe",
+      linkedin: "https://linkedin.com/in/alicedoe"
+    }
+  },
+  {
+    name: "Bob Doe",
+    username: "bobdoe",
+    role: "Data Scientist",
+    bio: "I'm a data scientist with a passion for uncovering hidden insights.",
+    avatarUrl: "https://avatars.githubusercontent.com/u/4",
+    socials: {
+      github: "https://github.com/bobdoe",
+      twitter: "https://twitter.com/bobdoe",
+      linkedin: ""
+    }
+  },
+]
+
+---
+
+<PageLayout title="About Us" description={SITE.DESCRIPTION}>
+  <TopLayout>
+    <!-- Introduction Section -->
+    <section class="intro py-8">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold mb-4">About Us</h1>
+        <p class="text-lg">Welcome to [Club Name], a community-driven organization dedicated to [briefly describe the club's purpose].</p>
+      </div>
+    </section>
+
+    <!-- Constitution Button -->
+    <section class="constitution py-8">
+      <div class="container mx-auto px-4">
+        
+          <a href="[link to constitution]" class="inline-block bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+          >Read Our Constitution</a>
+        
+      </div>
+    </section>
+  </TopLayout>
+
+  <BottomLayout>
+    <!-- Team Section -->
+    <section class="animate py-8">
+      <div class="container mx-auto px-4">
+        <div class="space-y-4">
+          <p class="font-semibold text-black dark:text-white text-2xl mb-4">
+            Our Team
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-5">
+            {person.map(member => (
+              <PersonCard
+                name={member.name}
+                role={member.role}
+                avatarUrl={member.avatarUrl}
+                socials={member.socials}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </BottomLayout>
+</PageLayout>

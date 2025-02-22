@@ -1,6 +1,98 @@
+:root {
+  --card-front-bg: #fff;
+  --card-back-bg: #f8f8f8;
+  --btn-bg: #007bff;
+  --btn-text: #fff;
+  --btn-bg-hover: #0056b3;
+  --tier-platinum-bg: #e5e5e5;
+  --tier-gold-bg: #ffd700;
+  --tier-silver-bg: #c0c0c0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.card {
+  width: 250px; /* Adjusted for 5:4 aspect ratio */
+  height: 200px; /* Adjusted for 5:4 aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.visit-website-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 8px 16px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.visit-website-btn:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.globe-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.tier-platinum {
+  border-color: var(--tier-platinum-bg);
+}
+
+.tier-gold {
+  border-color: var(--tier-gold-bg);
+}
+
+.tier-silver {
+  border-color: var(--tier-silver-bg);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+  --copy-btn-margin:10px;
+}
 
 @layer base {
   @font-face {
@@ -149,26 +241,16 @@ article img {
   @apply rotate-315;
 }
 
-.scrolling-text {
-  position: relative;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-size: 2em; /* Adjust the size as needed */
-  letter-spacing: 4px;
-  overflow: hidden;
-  background: linear-gradient(90deg, #000, #fff, #000);
-  background-repeat: no-repeat;
-  background-size: 80%;
-  animation: animate 3s linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+.copy-cnt{
+  @apply absolute w-full;
+  top:var(--copy-btn-margin);
+}
+.copy-btn {
+  @apply  w-[30px] fixed;
+  left:calc(100% - var(--copy-btn-margin));
+  transform: translateX(-100%);
 }
 
-@keyframes animate {
-  0% {
-    background-position: -500%;
-  }
-  100% {
-    background-position: 500%;
-  }
+.copy-svg {
+  @apply w-full aspect-square text-white opacity-70 hover:opacity-90;
 }

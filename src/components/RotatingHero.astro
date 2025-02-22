@@ -1,0 +1,33 @@
+---
+---
+<div class="relative flex items-center justify-center">
+    <!-- Rotating ring image -->
+    <img 
+      src="/cyberhax-ring-no-bg-on-dark.png" 
+      alt="Rotating Ring" 
+      class="absolute w-96 h-96 animate-spin-slow"
+      style="animation: spin 30s linear infinite;"
+    />
+    
+    <!-- Center logo -->
+    <img 
+      src="/cyberhax-submark.png"
+      alt="CYBERHAX Logo" 
+      class="relative w-96 h-96 z-10"
+    />
+  </div>
+  
+  <style>
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .animate-spin-slow {
+      animation: spin 20s linear infinite;
+    }
+  </style>
