@@ -1,6 +1,6 @@
 ---
 title: "Terms of Use"
-date: "22/02/2024"
+date: "02/22/2024"
 ---
 
 Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the https://cyberhax.club website (the "Service") operated by CYBERHAX ("us", "we", or "our").

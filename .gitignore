@@ -21,4 +21,4 @@ pnpm-debug.log*
 .DS_Store
 
 # work/history of club folder
-/src/pages/work
+/src/pages/history
