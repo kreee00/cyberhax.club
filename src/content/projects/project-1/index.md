@@ -1,16 +1,17 @@
 ---
-title: "Project One"
-summary: "Lorem ipsum dolor sit amet"
-date: "Mar 18 2022"
+title: "TechTarik X Bash&Brew"
+summary: "Memory Dump Analysis using Volatility3"
+date: "Mar 5 2025"
 draft: false
 tags:
-- Astro
-- Javascript
-- Typescript
-- Tailwind
-- SolidJs
-demoUrl: https://astro-sphere-demo.vercel.app
-repoUrl: https://github.com/markhorn-dev/astro-sphere
+- cybersecurity
+- forensics
+- memory-forensics
+- bashnbrew
+
+resourceUrl: https://mega.nz/file/C6IAlITD#8OP_byfo4eN-dFr3IQOhq8bUrsrWaMylV7gOHdL0jSs
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+TechTarik X Bash&Brew brings together tech enthusiasts for an in-depth session on **Memory Dump Analysis using Volatility3**. Participants will gain hands-on experience in forensic memory analysis, learn essential Volatility3 commands, and test their skills with a mini CTF challenge.  
+
+This session is designed for beginners and those looking to strengthen their cybersecurity and forensics knowledge. Attendees who complete all hands-on exercises and challenges will receive a **digital badge** as proof of their accomplishment.

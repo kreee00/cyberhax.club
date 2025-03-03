@@ -7,11 +7,20 @@ type Props = {
 }
 
 const { entry } = Astro.props
-const { collection, data, body } = entry
+const { collection, data } = entry
 const { title, summary, date } = data
 
 const demoUrl = collection === "projects" ? data.demoUrl : null
 const repoUrl = collection === "projects" ? data.repoUrl : null
+const resourceUrl = collection === "projects" ? data.resourceUrl : null
+const videoUrl = collection === "projects" ? data.videoUrl : null
+
+let body: string | undefined;
+if (collection === "projects") {
+  body = entry.body;
+} else {
+  body = undefined;
+}
 ---
 
 <div>
@@ -35,7 +44,7 @@ const repoUrl = collection === "projects" ? data.repoUrl : null
       <svg class="size-5 stroke-current">
         <use href="/ui.svg#book-open"/>
       </svg>
-      {readingTime(body)}
+      {readingTime(body ?? '')}
     </div>
   </div>
   <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
@@ -44,7 +53,7 @@ const repoUrl = collection === "projects" ? data.repoUrl : null
   <div class="mt-1">
     {summary}
   </div>
-  {(demoUrl || repoUrl) && 
+  {(demoUrl || repoUrl || resourceUrl || videoUrl) && 
   <div class="mt-4 flex flex-wrap gap-2">
     {demoUrl && 
       <a href={demoUrl} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
@@ -66,6 +75,27 @@ const repoUrl = collection === "projects" ? data.repoUrl : null
         </span>
       </a>
     }
+    {resourceUrl && 
+      <a href={resourceUrl} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+        <svg class="size-5 stroke-current">
+          <use href="/ui.svg#book-open" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
+        </svg>
+        <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
+          Resources
+        </span>
+      </a>
+    }
+    {videoUrl && 
+      <a href={videoUrl} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+        <svg class="size-4">
+          <use href="/ui.svg#video" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
+        </svg>
+        <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
+          See Video
+        </span>
+      </a>
+    }
   </div> 
   }
 </div>
+
