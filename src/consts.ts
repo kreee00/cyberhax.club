@@ -25,6 +25,12 @@ export const SEARCH: Page = {
   DESCRIPTION: "Search all posts and projects by keyword.",
 }
 
+// Partner Page
+export const PARTNER: Page = {
+  TITLE: "Partners and Sponsors",
+  DESCRIPTION: "Our partners and sponsors.",
+}
+
 // Links
 export const LINKS: Links = [
   { 
@@ -40,8 +46,8 @@ export const LINKS: Links = [
     HREF: "/projects", 
   },
   { 
-    TEXT: "Sponsors", 
-    HREF: "/sponsor", 
+    TEXT: "Partners", 
+    HREF: "/partners", 
   },
 ]
 

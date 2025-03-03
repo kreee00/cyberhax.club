@@ -4,6 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import TopLayout from "@layouts/TopLayout.astro";
 import BottomLayout from "@layouts/BottomLayout.astro";
 import PersonCard from "@components/PersonCard.astro"
+import { ActionsReturnedInvalidDataError } from "node_modules/astro/dist/core/errors/errors-data";
 
 const person = [
   {
@@ -17,6 +18,45 @@ const person = [
       github: "",
       twitter: "",
       linkedin: "https://www.linkedin.com/in/nurul-nadzifah-binti-muhammed-alwee/"
+    }
+  },
+  {
+    name: "Nadiah Lotfi",
+    username: "",
+    role: "Vice President I",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: vicepresident1@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+  }
+  },
+  {
+    name: "Lee Pei Lin",
+    username: "",
+    role: "Vice President II",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/rRY814bT/Lee-Pei-Lin.png",
+    socials: {
+      email: "mailto: vicepresident2@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+  }
+  },
+  {
+    name: "Yuvaneswari",
+    username: "",
+    role: "Secretary",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: secretary@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
     }
   },
   {
@@ -45,6 +85,19 @@ const person = [
     }
   },
   {
+    name: "Syarafuddin",
+    username: "",
+    role: "Co-Director of Infrastructure",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: co.director.infra@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+    }
+  },
+  {
     name: "Khairrunnas Azman",
     username: "",
     role: "Director of Talent & Development",
@@ -70,6 +123,84 @@ const person = [
       linkedin: "https://www.linkedin.com/in/hafeez-fitri-bin-shahrul-azam-7484442b3/"
     }
   },
+  {
+    name: "Yassin",
+    username: "",
+    role: "Director of Communication",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: director.comm@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+    }
+  },
+  {
+    name: "Aina Nabila",
+    username: "",
+    role: "Co-Director of Communication",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: co.director.comm@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+    }
+  },
+  {
+    name: "Charumathi",
+    username: "",
+    role: "Director of Events",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: director.event@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+    }
+  },
+  {
+    name: "Firdaus Zahin",
+    username: "",
+    role: "Co-Director of Events",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: co.director.event@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+    }
+  },
+  {
+    name: "Ahmad Zafri",
+    username: "",
+    role: "Director of Multimedia",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: director.multimedia@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+    }
+  },
+  {
+    name: "Yusuf",
+    username: "",
+    role: "Co-Director of Multimedia",
+    bio: "",
+    avatarUrl: "https://i.ibb.co/gLcb2pqx/default-avatar.jpg",
+    socials: {
+      email: "mailto: co.director.multimedia@cyberhax.club",
+      github: "",
+      twitter: "",
+      linkedin: ""
+    }
+  },
 ]
 
 ---
@@ -80,8 +211,17 @@ const person = [
     <section class="intro py-8">
       <div class="container mx-auto px-4">
         <h1 class="text-3xl font-bold mb-4">About Us</h1>
-        <p class="text-lg"><b>BACKGROUND:</b> CYBERHAX was founded in 2014 but was inactive from 2017 to 2023. Efforts to revive the club began in 2023.</p>
-        <p class="text-lg mt-4"><b>MISSION & VISION:</b> To empower UTP students with essential computer skills, coding proficiency, and cybersecurity knowledge, fostering a collaborative learning environment and providing early industry exposure to prepare them for the challenges of the digital age.</p>
+        <section class="animate">
+          <article>
+            <p>We are a <b><i>cybersecurity club</i></b>, a <b><i>technology enthusiast group</i></b>, a <b><i>community of learners</i></b>, a <b><i>team of innovators</i></b>, and a <b><i>passionate collective</i></b> dedicated to <b><i>unlocking digital potential</i></b>.</p>
+            <p>At CYBERHAX, we thrive on both building and breaking things. Our motivation stems from tackling complex challenges through hands-on problem solving and collaborative learning. Our true passion lies in organizing engaging Capture The Flag (CTF) competitions and fostering a vibrant, knowledge-sharing community.</p>
+            <p>Throughout our journey</p>
+            <p>We have hosted a range of events from local CTF challenges to collaborative workshops, focusing on delivering impactful experiences and nurturing a deep understanding of cybersecurity and technology.</p>
+            <p>Currently</p>
+            <p>We continue to grow as a pivotal hub for cybersecurity enthusiasts at UTP, dedicated to fostering skills, encouraging innovation, and creating opportunities for our members to excel in the digital realm.</p>
+          </article>
+        </section>
+        
       </div>
     </section>
 
@@ -89,7 +229,7 @@ const person = [
     <section class="constitution py-8">
       <div class="container mx-auto px-4">
         
-          <a href="[link to constitution]" class="inline-block bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+          <a href="/legal/constitution" class="inline-block bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
           >Read Our Constitution</a>
         
       </div>

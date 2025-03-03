@@ -1,0 +1,164 @@
+---
+// filepath: /media/kree/Xtra/Documents/website/src/pages/partners/index.astro
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import PartnerCard from "@components/PartnerCard.astro";
+import { SITE } from "@consts";
+
+const partnersData = [
+  // Add sponsors here
+  // Add more partners here
+  {
+    name: "Universiti Teknologi PETRONAS",
+    logo: "https://i.ibb.co/h51z0QV/utp.png",
+    website: "https://utp.edu.my",
+    tier: "affiliation",
+    description: "Top university in Malaysia."
+  }
+];
+
+const groupedPartners = {
+  platinum: partnersData.filter(partner => partner.tier === "platinum"),
+  gold: partnersData.filter(partner => partner.tier === "gold"),
+  silver: partnersData.filter(partner => partner.tier === "silver"),
+  bronze: partnersData.filter(partner => partner.tier === "bronze"),
+  affiliation: partnersData.filter(partner => partner.tier === "affiliation"),
+  media: partnersData.filter(partner => partner.tier === "media")
+};
+---
+
+<PageLayout title={SITE.TITLE} description={SITE.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {"Our Partners & Sponsors"}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate flex items-center justify-center">
+      <div class="partners-grid">
+        {groupedPartners.platinum.length > 0 && (
+          <>
+            <h2 class="tier-heading">Platinum Sponsors</h2>
+            {groupedPartners.platinum.map((partner) => (
+              <PartnerCard 
+                name={partner.name} 
+                logo={partner.logo} 
+                website={partner.website} 
+                tier={partner.tier} 
+                description={partner.description} 
+              />
+            ))}
+          </>
+        )}
+        {groupedPartners.gold.length > 0 && (
+          <>
+            <h2 class="tier-heading">Gold Sponsors</h2>
+            {groupedPartners.gold.map((partner) => (
+              <PartnerCard 
+                name={partner.name} 
+                logo={partner.logo} 
+                website={partner.website} 
+                tier={partner.tier} 
+                description={partner.description} 
+              />
+            ))}
+          </>
+        )}
+        {groupedPartners.silver.length > 0 && (
+          <>
+            <h2 class="tier-heading">Silver Sponsors</h2>
+            {groupedPartners.silver.map((partner) => (
+              <PartnerCard 
+                name={partner.name} 
+                logo={partner.logo} 
+                website={partner.website} 
+                tier={partner.tier} 
+                description={partner.description} 
+              />
+            ))}
+          </>
+        )}
+        {groupedPartners.bronze.length > 0 && (
+          <>
+            <h2 class="tier-heading">Bronze Sponsors</h2>
+            {groupedPartners.bronze.map((partner) => (
+              <PartnerCard 
+                name={partner.name} 
+                logo={partner.logo} 
+                website={partner.website} 
+                tier={partner.tier} 
+                description={partner.description} 
+              />
+            ))}
+          </>
+        )}
+        {groupedPartners.affiliation.length > 0 && (
+          <>
+            <h2 class="tier-heading">Affiliation</h2>
+            {groupedPartners.affiliation.map((partner) => (
+              <PartnerCard 
+                name={partner.name} 
+                logo={partner.logo} 
+                website={partner.website} 
+                tier={partner.tier} 
+                description={partner.description} 
+              />
+            ))}
+          </>
+        )}
+        {groupedPartners.media.length > 0 && (
+          <>
+            <h2 class="tier-heading">Media Partners</h2>
+            {groupedPartners.media.map((partner) => (
+              <PartnerCard 
+                name={partner.name} 
+                logo={partner.logo} 
+                website={partner.website} 
+                tier={partner.tier} 
+                description={partner.description} 
+              />
+            ))}
+          </>
+        )}
+      </div>
+    </div>
+    
+    <!-- Become a partner CTA -->
+    <div class="animate mt-16 text-center">
+      <h2 class="text-2xl font-bold mb-4 dark:text-white">Become a partner</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">
+        Join us in shaping the future of cybersecurity education.
+      </p>
+      <a 
+        href={`mailto:treasurer@cyberhax.club?subject=Partnership Inquiry`}
+        class="inline-block bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+      >
+        Contact Us About Partnership
+      </a>
+    </div>
+  </BottomLayout>
+</PageLayout>
+
+<style>
+.page-heading {
+  @apply text-3xl font-bold text-center mb-8 dark:text-white;
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.tier-heading {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--tier-heading-color);
+}
+</style>

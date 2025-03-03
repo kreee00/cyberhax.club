@@ -4,6 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro"
 import ArrowCard from "@components/ArrowCard"
 import { SITE, SOCIALS } from "@consts"
 import RotatingHero from "@components/RotatingHero.astro"
+import Container from '../components/Container.astro';
 
 const posts = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -40,7 +41,15 @@ const images = [
   </div>
 
   <div class="relative bg-white dark:bg-black">
-    <div class="mx-auto max-w-screen-sm p-5 space-y-24 pb-16">
+    <div class="mx-auto max-w-screen-lg p-5 space-y-24 pb-16">
+
+      <section class="py-5 overflow-hidden ">
+        <Container size="2xl">
+          <div class="relative h-full w-full flex justify-center items-center">
+            <p class="scrolling-text text-2xl">CYBERHAX | UTP Technology And Hacking Club</p>
+          </div>
+        </Container>
+      </section>
 
       <!-- Image Slideshow Section -->
       <section class="animate">
@@ -51,17 +60,6 @@ const images = [
             </div>
           ))}
         </div>
-      </section>
-
-      <section class="animate">
-        <article>
-          <p>We are a <b><i>cybersecurity club</i></b>, a <b><i>technology enthusiast group</i></b>, a <b><i>community of learners</i></b>, a <b><i>team of innovators</i></b>, and a <b><i>passionate collective</i></b> dedicated to <b><i>unlocking digital potential</i></b>.</p>
-          <p>At CYBERHAX, we thrive on both building and breaking things. Our motivation stems from tackling complex challenges through hands-on problem solving and collaborative learning. Our true passion lies in organizing engaging Capture The Flag (CTF) competitions and fostering a vibrant, knowledge-sharing community.</p>
-          <p>Throughout our journey</p>
-          <p>We have hosted a range of events from local CTF challenges to collaborative workshops, focusing on delivering impactful experiences and nurturing a deep understanding of cybersecurity and technology.</p>
-          <p>Currently</p>
-          <p>We continue to grow as a pivotal hub for cybersecurity enthusiasts at UTP, dedicated to fostering skills, encouraging innovation, and creating opportunities for our members to excel in the digital realm.</p>
-        </article>
       </section>
 
       <!-- Events Section -->
@@ -75,7 +73,7 @@ const images = [
           <div class="flex justify-center">
             <iframe
               src="https://lu.ma/embed/calendar/cal-3BUuj9gCFwvUGyH/events"
-              width="600"
+              width="1000"
               height="450"
               frameborder="0"
               style="border: 1px solid #bfcbda88; border-radius: 4px;"
